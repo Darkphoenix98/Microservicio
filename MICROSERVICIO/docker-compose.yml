@@ -1,0 +1,49 @@
+version : "3.7"
+services :
+  proyectos-microservicio :
+    container_name : proyectos-microservicio
+    image : proyectos-microservicio:v1
+    build :
+      context : .
+    ports :
+      - "4002"
+    networks : 
+      - proyectos-app
+
+  proyectos-microservicio-2 :
+    container_name : proyectos-microservicio-2
+    image : proyectos-microservicio:v1
+    ports :
+      - "4002"
+    networks : 
+      - proyectos-app
+
+  proyectos-microservicio-3 :
+    container_name : proyectos-microservicio-3
+    image : proyectos-microservicio:v1
+    ports :
+      - "4002"
+    networks : 
+      - proyectos-app  
+
+  proyectos-microservicio-4 :
+    container_name : proyectos-microservicio-4
+    image : proyectos-microservicio:v1
+    ports :
+      - "4002"
+    networks : 
+      - proyectos-app  
+
+  loader-balancer:
+    container_name : loader-balancer
+    image: loader-balancer:v1
+    build :
+      context : ./loader-balancer
+    ports:
+      - "4003:80"
+    networks : 
+      - proyectos-app
+
+networks :
+  proyectos-app :
+  
