@@ -9,6 +9,9 @@ services :
       - "4002"
     networks : 
       - proyectos-app
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - PORT=4002  
 
   proyectos-microservicio-2 :
     container_name : proyectos-microservicio-2
@@ -17,6 +20,9 @@ services :
       - "4002"
     networks : 
       - proyectos-app
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - PORT=4002   
 
   proyectos-microservicio-3 :
     container_name : proyectos-microservicio-3
@@ -24,7 +30,10 @@ services :
     ports :
       - "4002"
     networks : 
-      - proyectos-app  
+      - proyectos-app
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - PORT=4002     
 
   proyectos-microservicio-4 :
     container_name : proyectos-microservicio-4
@@ -32,7 +41,10 @@ services :
     ports :
       - "4002"
     networks : 
-      - proyectos-app  
+      - proyectos-app
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - PORT=4002     
 
   loader-balancer:
     container_name : loader-balancer
