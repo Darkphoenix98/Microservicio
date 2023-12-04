@@ -33,10 +33,7 @@ services :
     ports :
       - "4002"
     networks : 
-      - proyectos-app
-    environment:
-      - MONGO_URI=${MONGO_URI}
-      - PORT=4002     
+      - proyectos-app 
 
   loader-balancer:
     container_name : loader-balancer
